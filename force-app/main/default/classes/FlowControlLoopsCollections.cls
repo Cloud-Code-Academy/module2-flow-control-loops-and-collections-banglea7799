@@ -312,18 +312,20 @@ public with sharing class FlowControlLoopsCollections {
      * @param words The list of words to search.
      * @return The position of the word in the list as a string or -1 if the word was not found.
      */
-    public static Integer findWordInList(String wordToFind, List<String> words) {
+public static Integer findWordInList(String wordToFind, List<String> words) {
         // The variable to store the index of the word
-        Integer indexOfWord;
-
+        Integer indexOfWord ;
         // Loop through the list of words
+        for(Integer i = 0 ; i < words.size() ; i++){
             // If the current word is the word to find, exit the loop
-            for (Integer i = 0; i < words.size(); i++){
-                if (words[i] == wordToFind){
-                    return i;
-                }
+            
+            if (words[i] == wordToFind) {
+                indexOfWord = i;
+                break;
             }
-        return -1; // Replace null with the variable you used to store the result
+            indexOfWord = -1;
+        }
+        return indexOfWord; // Replace null with the variable you used to store the result
     }
 
   
